@@ -6,70 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Switch
-        android:id="@+id/switch5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="132dp"
-        android:checked="true"
-        android:clickable="false"
-        android:showText="false"
-        android:text="R1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:checked="true" />
+    <Button
+        android:id="@+id/ring_two"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="@+id/ring_four"
+        app:layout_constraintEnd_toStartOf="@+id/ring_four"
+        app:layout_constraintStart_toEndOf="@+id/ring_one"
+        app:layout_constraintTop_toTopOf="@+id/ring_four"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <Button
+        android:id="@+id/ring_three"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
         android:layout_marginTop="132dp"
-        android:showText="false"
-        android:text="R1"
-        app:layout_constraintStart_toEndOf="@+id/switch4"
+        android:layout_marginEnd="45dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintEnd_toStartOf="@+id/ring_five"
+        app:layout_constraintStart_toEndOf="@+id/ring_four"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Switch
-        android:id="@+id/switch6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <Button
+        android:id="@+id/ring_four"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ring_three"
+        app:layout_constraintEnd_toStartOf="@+id/ring_three"
+        app:layout_constraintStart_toEndOf="@+id/ring_two" />
+
+    <Button
+        android:id="@+id/ring_five"
+        android:layout_width="@dimen/width"
+        android:layout_height="0dp"
         android:layout_marginTop="132dp"
-        android:layout_marginEnd="16dp"
-        android:showText="false"
-        android:text="R1"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="440dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/switch2"
+        app:layout_constraintStart_toEndOf="@+id/ring_three"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Switch
-        android:id="@+id/switch4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="132dp"
-        android:checked="true"
-        android:clickable="false"
-        android:showText="false"
-        android:text="R1"
-        app:layout_constraintStart_toEndOf="@+id/switch3"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:checked="true" />
+    <Button
+        android:id="@+id/ring_one"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="21dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ring_two"
+        app:layout_constraintEnd_toStartOf="@+id/ring_two"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Switch
-        android:id="@+id/switch3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="132dp"
-        android:checked="true"
-        android:clickable="false"
-        android:showText="false"
-        android:text="R1"
-        app:layout_constraintStart_toEndOf="@+id/switch5"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:checked="true" />
+    <TextView
+        android:id="@+id/tv_one"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="243dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ring_five" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ring_five" />
 </androidx.constraintlayout.widget.ConstraintLayout>
