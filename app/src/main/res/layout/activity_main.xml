@@ -7,52 +7,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/ring_two"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginEnd="30dp"
-        android:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toBottomOf="@+id/ring_four"
-        app:layout_constraintEnd_toStartOf="@+id/ring_four"
-        app:layout_constraintStart_toEndOf="@+id/ring_one"
-        app:layout_constraintTop_toTopOf="@+id/ring_four"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/ring_three"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="45dp"
-        android:backgroundTint="#3F51B5"
-        app:layout_constraintEnd_toStartOf="@+id/ring_five"
-        app:layout_constraintStart_toEndOf="@+id/ring_four"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ring_four"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginEnd="28dp"
-        android:backgroundTint="#3F51B5"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ring_three"
-        app:layout_constraintEnd_toStartOf="@+id/ring_three"
-        app:layout_constraintStart_toEndOf="@+id/ring_two" />
-
-    <Button
-        android:id="@+id/ring_five"
-        android:layout_width="@dimen/width"
-        android:layout_height="0dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="440dp"
-        android:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ring_three"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/ring_one"
         android:layout_width="@dimen/width"
         android:layout_height="@dimen/height"
@@ -62,6 +16,52 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/ring_two"
         app:layout_constraintEnd_toStartOf="@+id/ring_two"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ring_two"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="@+id/ring_three"
+        app:layout_constraintEnd_toStartOf="@+id/ring_three"
+        app:layout_constraintStart_toEndOf="@+id/ring_one"
+        app:layout_constraintTop_toTopOf="@+id/ring_three"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/ring_three"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ring_four"
+        app:layout_constraintEnd_toStartOf="@+id/ring_four"
+        app:layout_constraintStart_toEndOf="@+id/ring_two" />
+
+    <Button
+        android:id="@+id/ring_four"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="45dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintEnd_toStartOf="@+id/ring_five"
+        app:layout_constraintStart_toEndOf="@+id/ring_three"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ring_five"
+        android:layout_width="@dimen/width"
+        android:layout_height="0dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="440dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toTopOf="@+id/reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ring_four"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_one"
@@ -74,12 +74,12 @@
         app:layout_constraintTop_toBottomOf="@+id/ring_five" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/reset"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="R"
+        app:icon="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ring_five" />
