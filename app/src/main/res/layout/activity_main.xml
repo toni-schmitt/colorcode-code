@@ -82,4 +82,18 @@
         app:layout_constraintEnd_toStartOf="@+id/spinner_three"
         app:layout_constraintStart_toEndOf="@+id/spinner_one"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <TextView
+        android:id="@+id/tv_tolerance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="424dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

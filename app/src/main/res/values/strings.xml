@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">colorcode-code</string>
     <string-array name="colors">
+        <item>OFF</item>
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>
@@ -12,6 +13,20 @@
         <item>Grey</item>
         <item>White</item>
         <item>Gold</item>
-        <item>Silver</item>+6+
+        <item>Silver</item>
+    </string-array>
+    <string-array name="colors_till_3">
+        <item>Black</item>
+        <item>Brown</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Violet</item>
+        <item>Grey</item>
+        <item>White</item>
+        <item>Gold</item>
+        <item>Silver</item>
     </string-array>
 </resources>
