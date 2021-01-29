@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner spinner_four = findViewById(R.id.spinner_four);
         Spinner spinner_five = findViewById(R.id.spinner_five);
 
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_one.setAdapter(adapter);
