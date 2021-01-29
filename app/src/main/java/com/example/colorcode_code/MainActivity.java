@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner_one = findViewById(R.id.spinner_two);
+        Spinner spinner_one = findViewById(R.id.spinner_one);
         Spinner spinner_two = findViewById(R.id.spinner_two);
         Spinner spinner_three = findViewById(R.id.spinner_three);
         Spinner spinner_four = findViewById(R.id.spinner_four);
