@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">colorcode-code</string>
-    <string-array name="colors">
+    //string array for spinner 4-5
+    <string-array name="colors_one">
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>
@@ -12,6 +13,22 @@
         <item>Grey</item>
         <item>White</item>
         <item>Gold</item>
-        <item>Silver</item>+6+
+        <item>Silver</item>
+    </string-array>
+    //string array for spinner 1-3
+    <string-array name="colors_two">
+        <item>Not Set</item>
+        <item>Black</item>
+        <item>Brown</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Violet</item>
+        <item>Grey</item>
+        <item>White</item>
+        <item>Gold</item>
+        <item>Silver</item>
     </string-array>
 </resources>

@@ -21,17 +21,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner spinner_four = findViewById(R.id.spinner_four);
         Spinner spinner_five = findViewById(R.id.spinner_five);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_one.setAdapter(adapter);
+        //spinner for ring 1-3
+        ArrayAdapter<CharSequence> adapter_one = ArrayAdapter.createFromResource(this, R.array.colors_one, android.R.layout.simple_spinner_item);
+        adapter_one.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner for ring 4-5
+        ArrayAdapter<CharSequence> adapter_two = ArrayAdapter.createFromResource(this, R.array.colors_two, android.R.layout.simple_spinner_item);
+        adapter_one.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner_one.setAdapter(adapter_one);
         spinner_one.setOnItemSelectedListener(this);
-        spinner_two.setAdapter(adapter);
+        spinner_two.setAdapter(adapter_one);
         spinner_two.setOnItemSelectedListener(this);
-        spinner_three.setAdapter(adapter);
+        spinner_three.setAdapter(adapter_one);
         spinner_three.setOnItemSelectedListener(this);
-        spinner_four.setAdapter(adapter);
+        spinner_four.setAdapter(adapter_two);
         spinner_four.setOnItemSelectedListener(this);
-        spinner_five.setAdapter(adapter);
+        spinner_five.setAdapter(adapter_two);
         spinner_five.setOnItemSelectedListener(this);
     }
 
