@@ -23,15 +23,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // EXTEND THIS TO ALL COLORS
     final int[] COLORS = new int[]{R.color.black};
 
-    private Button btn_Continue;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_Continue = findViewById(R.id.btn_Continue);
-        btn_Continue.setOnClickListener(v -> openActivity());
+        findViewById(R.id.btn_Continue).setOnClickListener(v -> openActivity());
     }
 
     public void openActivity() {
