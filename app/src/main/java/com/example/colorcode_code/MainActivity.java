@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup rg_Rings = findViewById(R.id.rg_RingGroup);
 
         if (rg_Rings.getCheckedRadioButtonId() == -1) {
-            Snackbar.make(findViewById(R.id.btn_Continue), "Choose a Ring count", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(findViewById(R.id.btn_Continue), R.string.err_select_radiobutton, Snackbar.LENGTH_LONG).show();
             return;
         }
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, FiveRingsActivity.class);
                 break;
             default:
-                Snackbar.make(findViewById(R.id.btn_Continue), "Something went wrong", Snackbar.LENGTH_LONG);
+                Snackbar.make(findViewById(R.id.btn_Continue), R.string.err_smth_wrong, Snackbar.LENGTH_LONG);
                 return;
         }
         startActivity(intent);
