@@ -19,9 +19,6 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    final float[] TOLERANCE = new float[]{0f, 1f, 2f, 0f, 0f, 0.5f, 0.25f, 0.1f, 0f, 0f, 5f, 10f};
-    // EXTEND THIS TO ALL COLORS
-    final int[] COLORS = new int[]{R.color.black};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +55,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }
