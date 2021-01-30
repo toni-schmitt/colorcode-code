@@ -2,12 +2,18 @@ package com.example.colorcode_code;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
 
@@ -17,60 +23,47 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     // EXTEND THIS TO ALL COLORS
     final int[] COLORS = new int[]{R.color.black};
 
-    private static int _ringCounter = 3;
-
-    private Spinner[] _one_to_three;
-    private Spinner[] _four_to_five;
-
-    private TextView _tv_result;
-    private TextView _tv_tolerance;
+    private Button btn_Continue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _tv_result = findViewById(R.id.tv_result);
-        _tv_result = findViewById(R.id.tv_tolerance);
+        btn_Continue = findViewById(R.id.btn_Continue);
+        btn_Continue.setOnClickListener(v -> openActivity());
+    }
 
-        _one_to_three = new Spinner[]
-                {
-                        findViewById(R.id.spinner_one),
-                        findViewById(R.id.spinner_two),
-                        findViewById(R.id.spinner_three)
-                };
-        _four_to_five = new Spinner[]
-                {
-                        findViewById(R.id.spinner_four),
-                        findViewById(R.id.spinner_five)
-                };
+    public void openActivity() {
+        RadioGroup rg_Rings = findViewById(R.id.rg_RingGroup);
 
-
-        for (Spinner spinner : _one_to_three) {
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors_till_3, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
-            spinner.setOnItemSelectedListener(this);
+        if (rg_Rings.getCheckedRadioButtonId() == -1) {
+            Snackbar.make(findViewById(R.id.btn_Continue), "Choose a Ring count", Snackbar.LENGTH_LONG).show();
+            return;
         }
 
-        for (Spinner spinner : _four_to_five) {
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
-            spinner.setOnItemSelectedListener(this);
+        Intent intent;
+        switch (rg_Rings.getResources().getResourceEntryName(rg_Rings.getCheckedRadioButtonId())) {
+            case "rb_ThreeRings":
+                intent = new Intent(this, ThreeRingsActivity.class);
+                break;
+            case "rb_FourRings":
+                intent = new Intent(this, FourRingsActivity.class);
+                break;
+            case "rb_FiveRings":
+                intent = new Intent(this, FiveRingsActivity.class);
+                break;
+            default:
+                Snackbar.make(findViewById(R.id.btn_Continue), "Something went wrong", Snackbar.LENGTH_LONG);
+                return;
         }
+        startActivity(intent);
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-
-        if (!Arrays.asList(_one_to_three).contains(parent)) {
-            if (position != 0)
-                _ringCounter++;
-            else
-                _ringCounter--;
-        }
     }
 
     @Override

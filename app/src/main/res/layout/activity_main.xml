@@ -6,94 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/spinner_three"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_four"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_four"
-        app:layout_constraintStart_toEndOf="@+id/spinner_two"
-        app:layout_constraintTop_toTopOf="@+id/spinner_four"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Spinner
-        android:id="@+id/spinner_four"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="289dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_one"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_five"
-        app:layout_constraintStart_toEndOf="@+id/spinner_three"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_two" />
-
-    <Spinner
-        android:id="@+id/spinner_five"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="477dp"
-        app:layout_constraintBottom_toTopOf="@+id/reset"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner_four"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner_one"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="27dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_two"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_two"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinner_two" />
-
-    <TextView
-        android:id="@+id/tv_one"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="243dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RadioGroup
+        android:id="@+id/rg_RingGroup"
+        android:layout_width="374dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_four" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_ringCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rings_count" />
+
+        <RadioButton
+            android:id="@+id/rb_ThreeRings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/three_rings" />
+
+        <RadioButton
+            android:id="@+id/rb_FourRings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/four_rings" />
+
+        <RadioButton
+            android:id="@+id/rb_FiveRings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/five_rings" />
+
+    </RadioGroup>
 
     <Button
-        android:id="@+id/reset"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
+        android:id="@+id/btn_Continue"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="15dp"
-        app:icon="@android:drawable/ic_menu_revert"
+        android:layout_marginBottom="219dp"
+        android:text="@string/btn_continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_five" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_RingGroup" />
 
-    <Spinner
-        android:id="@+id/spinner_two"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_four"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_three"
-        app:layout_constraintStart_toEndOf="@+id/spinner_one"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="377dp" />
-
-    <TextView
-        android:id="@+id/tv_tolerance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="424dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

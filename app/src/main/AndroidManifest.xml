@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Colorcodecode"
         tools:ignore="AllowBackup">
+        <activity android:name=".FiveRingsActivity" />
+        <activity android:name=".FourRingsActivity" />
+        <activity android:name=".ThreeRingsActivity" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
