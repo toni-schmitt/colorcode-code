@@ -10,8 +10,8 @@
     <string name="err_select_radiobutton">You need to select a Radio Button before you continue</string>
     <string name="err_smth_wrong">Something went wrong!</string>
 
-    <string-array name="colors">
-        <item>OFF</item>
+
+    <string-array name="colors_ring123">
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>
@@ -22,10 +22,12 @@
         <item>Violet</item>
         <item>Grey</item>
         <item>White</item>
-        <item>Gold</item>
-        <item>Silver</item>
     </string-array>
-    <string-array name="colors_till_3">
+
+
+
+
+    <string-array name="colors">
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>

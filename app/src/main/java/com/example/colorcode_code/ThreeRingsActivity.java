@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+
+import java.lang.reflect.Array;
 
 public class ThreeRingsActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +21,8 @@ public class ThreeRingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_three_rings);
 
         findViewById(R.id.btn_Back_ThreeRings).setOnClickListener(v -> onBack());
+
+
     }
 
     public void onBack() {
