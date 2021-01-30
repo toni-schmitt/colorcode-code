@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">colorcode-code</string>
-    <string name="rings_count">Count of Rings</string>
-    <string name="three_rings">Three Rings</string>
-    <string name="four_rings">Four Rings</string>
-    <string name="five_rings">Five Rings</string>
-    <string name="btn_continue">Continue</string>
-    <string name="btn_back">Back</string>
+    <string name="rings_count">Anzahl der Ringe</string>
+    <string name="three_rings">Drei Ringe</string>
+    <string name="four_rings">Vier Ringe</string>
+    <string name="five_rings">Fünf Ringe</string>
+    <string name="btn_continue">Weiter</string>
+    <string name="btn_back">Zurück</string>
 
     <string-array name="colors">
         <item>OFF</item>
