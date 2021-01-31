@@ -9,19 +9,21 @@
 
     <Spinner
         android:id="@+id/spinner_3_2"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="125dp"
         android:layout_marginEnd="75dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_3_1"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintEnd_toStartOf="@+id/spinner_3_3"
         app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
-        app:layout_constraintTop_toTopOf="@+id/spinner_3_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_3_3"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
-        android:layout_marginEnd="87dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="86dp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner_3_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spinner_3_2"
@@ -41,15 +43,38 @@
 
     <Spinner
         android:id="@+id/spinner_3_1"
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/height"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="125dp"
-        android:layout_marginEnd="62dp"
+        android:layout_marginEnd="63dp"
         android:layout_marginBottom="457dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_Back_ThreeRings"
         app:layout_constraintEnd_toStartOf="@+id/spinner_3_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="73dp"
+        android:onClick="onClick"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/tv"
+        app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_3_2" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="336dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
