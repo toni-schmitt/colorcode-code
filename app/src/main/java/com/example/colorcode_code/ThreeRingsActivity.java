@@ -18,7 +18,6 @@ public class ThreeRingsActivity extends AppCompatActivity {
     Spinner spinner_3_3;
     Button btn;
 
-    Values values = ((Values) getApplicationContext());
 
 
     @Override
@@ -41,6 +40,9 @@ public class ThreeRingsActivity extends AppCompatActivity {
         spinner_3_3.setAdapter(adapter_3_2);
 
         findViewById(R.id.btn_Back_ThreeRings).setOnClickListener(v -> onBack());
+
+
+        //Values values = ((Values) getApplicationContext());
     }
 
     public void onBack() {

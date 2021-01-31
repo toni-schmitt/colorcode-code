@@ -19,6 +19,8 @@ public class FourRingsActivity extends AppCompatActivity {
         Spinner spinner_4_3 = findViewById(R.id.spinner_4_3);
         Spinner spinner_4_4 = findViewById(R.id.spinner_4_4);
 
+
+
         ArrayAdapter<CharSequence> adapter_4_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_4_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_4_1.setAdapter(adapter_4_1);
