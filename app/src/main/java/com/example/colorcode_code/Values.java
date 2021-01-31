@@ -142,4 +142,16 @@ public class Values extends Application {
         }
 
     }
+
+    public Hashtable<String, Double> getDict_Ring(){
+        return dict_ring;
+    }
+    public Hashtable<String, Double> getDict_Multi(){
+        return dict_multi;
+    }
+
+    public Hashtable<String, Double> getDict_Tole(){
+        return dict_tole;
+    }
+
 }
