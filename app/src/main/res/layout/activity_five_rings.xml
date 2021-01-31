@@ -6,15 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".FiveRingsActivity">
 
+    <Spinner
+        android:id="@+id/spinner_5_2"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="490dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_BackFiveRings"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_5_3"
+        app:layout_constraintStart_toEndOf="@+id/spinner_5_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_5_1"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_5_2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_5_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner_5_2" />
+
+    <Spinner
+        android:id="@+id/spinner_5_3"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_5_4"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_5_4"
+        app:layout_constraintStart_toEndOf="@+id/spinner_5_2"
+        app:layout_constraintTop_toTopOf="@+id/spinner_5_4" />
+
+    <Spinner
+        android:id="@+id/spinner_5_4"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="38dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_5_2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_5_5"
+        app:layout_constraintStart_toEndOf="@+id/spinner_5_3"
+        app:layout_constraintTop_toTopOf="@+id/spinner_5_2" />
+
+    <Spinner
+        android:id="@+id/spinner_5_5"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="57dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_5_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner_5_4"
+        app:layout_constraintTop_toTopOf="@+id/spinner_5_4" />
+
     <Button
         android:id="@+id/btn_BackFiveRings"
         android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_height"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="14dp"
         android:text="@string/btn_back"
         app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_5_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

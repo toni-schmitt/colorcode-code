@@ -6,15 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".FourRingsActivity">
 
+    <Spinner
+        android:id="@+id/spinner_4_1"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="43dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_4_2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_4_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner_4_2" />
+
+    <Spinner
+        android:id="@+id/spinner_4_2"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="489dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_BackFourRings"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_4_3"
+        app:layout_constraintStart_toEndOf="@+id/spinner_4_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_4_4"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_4_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner_4_3"
+        app:layout_constraintTop_toTopOf="@+id/spinner_4_3" />
+
     <Button
         android:id="@+id/btn_BackFourRings"
         android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_height"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="14dp"
         android:text="@string/btn_back"
         app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_4_2" />
+
+    <Spinner
+        android:id="@+id/spinner_4_3"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_4_2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_4_4"
+        app:layout_constraintStart_toEndOf="@+id/spinner_4_2"
+        app:layout_constraintTop_toTopOf="@+id/spinner_4_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
