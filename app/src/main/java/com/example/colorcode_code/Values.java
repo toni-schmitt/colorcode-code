@@ -10,7 +10,7 @@ public class Values extends Application {
     Hashtable<String, Double> dict_multi;
     Hashtable<String, Double> dict_tole;
 
-    public Values() {
+    public void Init() {
         try {
             dict_ring = new Hashtable<String, Double>() {
                 {
@@ -143,15 +143,52 @@ public class Values extends Application {
 
     }
 
-    public Hashtable<String, Double> getDict_Ring(){
+    public Hashtable<String, Double> getDict_Ring() {
         return dict_ring;
     }
-    public Hashtable<String, Double> getDict_Multi(){
+
+    public Hashtable<String, Double> getDict_Multi() {
         return dict_multi;
     }
 
-    public Hashtable<String, Double> getDict_Tole(){
+    public Hashtable<String, Double> getDict_Tole() {
         return dict_tole;
     }
+
+    /*public void getDict_Ring(int index) {
+        //return dict_ring[index];
+    }
+
+    public Hashtable<String, Double> getDict_Multi(int index) {
+        return dict_multi;
+    }
+
+    public Hashtable<String, Double> getDict_Tole(int index) {
+        return dict_tole;
+    }
+
+    public Hashtable<String, Double> getDict_Ring(String key) {
+        return dict_ring;
+    }
+
+    public Hashtable<String, Double> getDict_Multi(String key) {
+        return dict_multi;
+    }
+
+    public Hashtable<String, Double> getDict_Tole(String key) {
+        return dict_tole;
+    }
+
+    public Hashtable<String, Double> getDict_Ring(Double value) {
+        return dict_ring;
+    }
+
+    public Hashtable<String, Double> getDict_Multi(Double value) {
+        return dict_multi;
+    }
+
+    public Hashtable<String, Double> getDict_Tole(Double value) {
+        return dict_tole;
+    }*/
 
 }

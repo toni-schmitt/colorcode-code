@@ -6,23 +6,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class ThreeRingsActivity extends AppCompatActivity {
-    Spinner spinner_3_1;
-    Spinner spinner_3_2;
-    Spinner spinner_3_3;
-    Button btn;
-    TextView tv_1 = findViewById(R.id.tv_3_1);
-    Values value = ((Values) getApplicationContext());
+    private Spinner spinner_3_1;
+    private Spinner spinner_3_2;
+    private Spinner spinner_3_3;
+    private TextView tv_Resistance;
+    private Values values;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_rings);
-        btn = findViewById(R.id.btn_3);
+
+        tv_Resistance = findViewById(R.id.tv_Resistance_ThreeRings);
+        values = ((Values) getApplicationContext());
+        values.Init();
 
         spinner_3_1 = findViewById(R.id.spinner_3_1);
         spinner_3_2 = findViewById(R.id.spinner_3_2);
@@ -38,6 +41,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         spinner_3_3.setAdapter(adapter_3_2);
 
         findViewById(R.id.btn_Back_ThreeRings).setOnClickListener(v -> onBack());
+        findViewById(R.id.btn_Continue_ThreeRings).setOnClickListener(this::onClickThreeRings);
 
     }
 
@@ -45,21 +49,21 @@ public class ThreeRingsActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
-    public void onClick(View view) {
-        String spinner_1 = spinner_3_1.getSelectedItem().toString();
-        String spinner_2 = spinner_3_2.getSelectedItem().toString();
-        String spinner_3 = spinner_3_3.getSelectedItem().toString();
+    public void onClickThreeRings(View view) {
+        String ring1_selected = spinner_3_1.getSelectedItem().toString();
+        String ring2_selected = spinner_3_2.getSelectedItem().toString();
+        String ring3_selected = spinner_3_3.getSelectedItem().toString();
         String num;
 
-        if (value.dict_ring.get(spinner_1) != 0){
-            num = value.dict_ring.get(spinner_1).toString() + value.dict_ring.get(spinner_2).toString();
+        if (values.dict_ring.get(ring1_selected) != 0){
+            num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         }
         else{
-            num = value.dict_ring.get(spinner_2).toString();
+            num = Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         }
 
-        int erg = Integer.parseInt(num) * value.dict_multi.get(spinner_3).intValue();
-        tv_1.setText(erg);
+        int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(ring3_selected)).intValue();
+        tv_Resistance.setText(erg);
     }
 }
 

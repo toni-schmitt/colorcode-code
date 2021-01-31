@@ -9,20 +9,28 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class FiveRingsActivity extends AppCompatActivity {
-    Spinner spinner_5_1;
-    Spinner spinner_5_2;
-    Spinner spinner_5_3;
-    Spinner spinner_5_4;
-    Spinner spinner_5_5;
-    TextView tv_5_1 = findViewById(R.id.tv_5_1);
-    TextView tv_5_2 = findViewById(R.id.tv_5_2);
-    Values value = ((Values) getApplicationContext());
+    private Spinner spinner_5_1;
+    private Spinner spinner_5_2;
+    private Spinner spinner_5_3;
+    private Spinner spinner_5_4;
+    private Spinner spinner_5_5;
+    private TextView tv_Resistance;
+    private TextView tv_Tolerance;
+    private Values values;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_five_rings);
+
+        tv_Resistance = findViewById(R.id.tv_Resistance_FiveRings);
+        tv_Tolerance = findViewById(R.id.tv_Tolerance_FiveRings);
+        values = ((Values) getApplicationContext());
+        values.Init();
+
         spinner_5_1 = findViewById(R.id.spinner_5_1);
         spinner_5_2 = findViewById(R.id.spinner_5_2);
         spinner_5_3 = findViewById(R.id.spinner_5_3);
@@ -44,13 +52,14 @@ public class FiveRingsActivity extends AppCompatActivity {
         spinner_5_5.setAdapter(adapter_5_3);
 
         findViewById(R.id.btn_BackFiveRings).setOnClickListener(v -> onBack());
+        findViewById(R.id.btn_Continue_FiveRings).setOnClickListener(this::onClickFiveRings);
     }
 
     public void onBack() {
         startActivity(new Intent(this, MainActivity.class));
     }
 
-    public void onClick(View view) {
+    public void onClickFiveRings(View view) {
         String spinner_1 = spinner_5_1.getSelectedItem().toString();
         String spinner_2 = spinner_5_2.getSelectedItem().toString();
         String spinner_3 = spinner_5_3.getSelectedItem().toString();
@@ -58,19 +67,26 @@ public class FiveRingsActivity extends AppCompatActivity {
         String spinner_5 = spinner_5_5.getSelectedItem().toString();
         String num;
 
-        if (value.dict_ring.get(spinner_1) != 0 && value.dict_ring.get(spinner_2) != 0){
-            num = value.dict_ring.get(spinner_1).toString() + value.dict_ring.get(spinner_2).toString() + value.dict_ring.get(spinner_3).toString();
+        if (values == null) {
+            values = ((Values) getApplicationContext());
         }
-        else if (value.dict_ring.get(spinner_2) != 0){
-            num = value.dict_ring.get(spinner_2).toString() + value.dict_ring.get(spinner_3).toString();
-        }
-        else{
-            num = value.dict_ring.get(spinner_3).toString();
+        if (values.dict_ring == null || values.dict_tole == null || values.dict_multi == null) {
+            values.Init();
         }
 
-        int erg = Integer.parseInt(num) * value.dict_multi.get(spinner_4).intValue();
-        tv_5_1.setText(erg);
-        tv_5_2.setText((erg * value.dict_tole.get(spinner_5)) + " +-");
+        if (values.dict_ring.get(spinner_1) != 0 && values.dict_ring.get(spinner_2) != 0) {
+            num = Objects.requireNonNull(values.dict_ring.get(spinner_1)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_2)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
+        } else if (values.dict_ring.get(spinner_2) != 0) {
+            num = Objects.requireNonNull(values.dict_ring.get(spinner_2)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
+        } else {
+            num = Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
+        }
+
+        int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(spinner_4)).intValue();
+        tv_Resistance.setText(erg);
+        tv_Tolerance.setText((erg * values.dict_tole.get(spinner_5)) + " +-");
+
+
     }
 }
 
