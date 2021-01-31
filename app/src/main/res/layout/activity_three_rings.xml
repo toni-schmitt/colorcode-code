@@ -13,8 +13,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
+        android:layout_marginBottom="224dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_3_2"
         app:layout_constraintEnd_toStartOf="@+id/spinner_3_3"
         app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,26 +55,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btn_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="73dp"
         android:onClick="onClick"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/tv"
+        app:layout_constraintBottom_toTopOf="@+id/tv_3_1"
         app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
         app:layout_constraintTop_toBottomOf="@+id/spinner_3_2" />
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tv_3_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="336dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn"
-        app:layout_constraintTop_toBottomOf="@+id/btn" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_3" />
+
+    <TextView
+        android:id="@+id/tv_3_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="278dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_3_1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_3_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

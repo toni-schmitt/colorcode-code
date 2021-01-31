@@ -7,18 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class FiveRingsActivity extends AppCompatActivity {
+    Spinner spinner_5_1;
+    Spinner spinner_5_2;
+    Spinner spinner_5_3;
+    Spinner spinner_5_4;
+    Spinner spinner_5_5;
+    TextView tv_5_1 = findViewById(R.id.tv_5_1);
+    TextView tv_5_2 = findViewById(R.id.tv_5_2);
+    Values value = ((Values) getApplicationContext());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_five_rings);
-        Spinner spinner_5_1 = findViewById(R.id.spinner_5_1);
-        Spinner spinner_5_2 = findViewById(R.id.spinner_5_2);
-        Spinner spinner_5_3 = findViewById(R.id.spinner_5_3);
-        Spinner spinner_5_4 = findViewById(R.id.spinner_5_4);
-        Spinner spinner_5_5 = findViewById(R.id.spinner_5_5);
+        spinner_5_1 = findViewById(R.id.spinner_5_1);
+        spinner_5_2 = findViewById(R.id.spinner_5_2);
+        spinner_5_3 = findViewById(R.id.spinner_5_3);
+        spinner_5_4 = findViewById(R.id.spinner_5_4);
+        spinner_5_5 = findViewById(R.id.spinner_5_5);
 
         ArrayAdapter<CharSequence> adapter_5_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_5_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -41,5 +50,27 @@ public class FiveRingsActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
+    public void onClick(View view) {
+        String spinner_1 = spinner_5_1.getSelectedItem().toString();
+        String spinner_2 = spinner_5_2.getSelectedItem().toString();
+        String spinner_3 = spinner_5_3.getSelectedItem().toString();
+        String spinner_4 = spinner_5_4.getSelectedItem().toString();
+        String spinner_5 = spinner_5_5.getSelectedItem().toString();
+        String num;
+
+        if (value.dict_ring.get(spinner_1) != 0 && value.dict_ring.get(spinner_2) != 0){
+            num = value.dict_ring.get(spinner_1).toString() + value.dict_ring.get(spinner_2).toString() + value.dict_ring.get(spinner_3).toString();
+        }
+        else if (value.dict_ring.get(spinner_2) != 0){
+            num = value.dict_ring.get(spinner_2).toString() + value.dict_ring.get(spinner_3).toString();
+        }
+        else{
+            num = value.dict_ring.get(spinner_3).toString();
+        }
+
+        int erg = Integer.parseInt(num) * value.dict_multi.get(spinner_4).intValue();
+        tv_5_1.setText(erg);
+        tv_5_2.setText((erg * value.dict_tole.get(spinner_5)) + " +-");
+    }
 }
 
