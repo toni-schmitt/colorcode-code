@@ -69,10 +69,10 @@ public class FourRingsActivity extends AppCompatActivity {
         //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
 
         String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
-        String erg_tole = (Integer.parseInt(num) * (int)Double.parseDouble(tole)) + " ";
+        String erg_tole = (Integer.parseInt(num) * Double.parseDouble(tole)) + " ";
         //erg.replaceAll("0","");
         tv_Resistance.setText(erg);
-        tv_Tolerance.setText(erg_tole);
+        tv_Tolerance.setText(erg_tole + " +-");
 
     }
 }

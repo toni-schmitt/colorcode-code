@@ -60,31 +60,23 @@ public class FiveRingsActivity extends AppCompatActivity {
     }
 //
     public void onClickFiveRings(View view) {
-        String spinner_1 = spinner_5_1.getSelectedItem().toString();
-        String spinner_2 = spinner_5_2.getSelectedItem().toString();
-        String spinner_3 = spinner_5_3.getSelectedItem().toString();
-        String spinner_4 = spinner_5_4.getSelectedItem().toString();
-        String spinner_5 = spinner_5_5.getSelectedItem().toString();
-        String num;
+        String ring1_selected = spinner_5_1.getSelectedItem().toString();
+        String ring2_selected = spinner_5_2.getSelectedItem().toString();
+        String ring3_selected = spinner_5_3.getSelectedItem().toString();
+        String ring4_selected = spinner_5_4.getSelectedItem().toString();
+        String ring5_selected = spinner_5_5.getSelectedItem().toString();
 
-        if (values == null) {
-            values = ((Values) getApplicationContext());
-        }
-        if (values.dict_ring == null || values.dict_tole == null || values.dict_multi == null) {
-            values.Init();
-        }
+        String num = values.dict_ring.get(ring1_selected).toString() + values.dict_ring.get(ring2_selected).toString() + values.dict_ring.get(ring3_selected).toString();
+        String multi = Objects.requireNonNull(values.dict_multi.get(ring4_selected)).toString();
+        String tole = Objects.requireNonNull(values.dict_tole.get(ring5_selected)).toString();
 
-        if (values.dict_ring.get(spinner_1) != 0 && values.dict_ring.get(spinner_2) != 0) {
-            num = Objects.requireNonNull(values.dict_ring.get(spinner_1)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_2)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
-        } else if (values.dict_ring.get(spinner_2) != 0) {
-            num = Objects.requireNonNull(values.dict_ring.get(spinner_2)).toString() + Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
-        } else {
-            num = Objects.requireNonNull(values.dict_ring.get(spinner_3)).toString();
-        }
+        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
 
-        int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(spinner_4)).intValue();
+        String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
+        String erg_tole = (Integer.parseInt(num) * Double.parseDouble(tole)) + " ";
+        //erg.replaceAll("0","");
         tv_Resistance.setText(erg);
-        tv_Tolerance.setText((erg * values.dict_tole.get(spinner_5)) + " +-");
+        tv_Tolerance.setText(erg_tole + " +-");
 
 
     }

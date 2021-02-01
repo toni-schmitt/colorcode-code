@@ -5,7 +5,7 @@ import android.app.Application;
 import java.util.Hashtable;
 
 public class Values extends Application {
-//
+    //
     Hashtable<String, Integer> dict_ring;
     Hashtable<String, Double> dict_multi;
     Hashtable<String, Double> dict_tole;
@@ -183,4 +183,9 @@ public class Values extends Application {
         return dict_tole;
     }*/
 
+    public static String formatNumber(int count) {
+        if (count < 1000) return "" + count;
+        int exp = (int) (Math.log(count) / Math.log(1000));
+        return String.format("%.1f %c", count / Math.pow(1000, exp),"kMG".charAt(exp-1));
+    }
 }
