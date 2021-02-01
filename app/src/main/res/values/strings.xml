@@ -6,6 +6,7 @@
     <string name="five_rings">Five Rings</string>
     <string name="btn_continue">Continue</string>
     <string name="btn_back">Back</string>
+    <string name="btn_calc">Calculate</string>
 
     <string name="err_select_radiobutton">You need to select a Radio Button before you continue</string>
     <string name="err_smth_wrong">Something went wrong!</string>
