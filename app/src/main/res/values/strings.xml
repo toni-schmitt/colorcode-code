@@ -15,7 +15,7 @@
 
     <string name="plus_minus">+-</string>
 
-    <string-array name="all_rings">
+    <string-array name="all_rings"> <!-- all colors for color selection -->
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>
@@ -30,7 +30,7 @@
         <item>Silver</item>
     </string-array>
 
-    <string-array name="rings">
+    <string-array name="rings"> <!-- value rings -->
         <item>Black</item>
         <item>Brown</item>
         <item>Red</item>
@@ -43,7 +43,7 @@
         <item>White</item>
     </string-array>
 
-    <string-array name="multi">
+    <string-array name="multi"> <!-- multiplicator -->
         <item>Brown</item>
         <item>Red</item>
         <item>Orange</item>
@@ -55,7 +55,7 @@
         <item>Silver</item>
     </string-array>
 
-    <string-array name="tole">
+    <string-array name="tole"> <!-- toleranz -->
         <item>Brown</item>
         <item>Red</item>
         <item>Green</item>

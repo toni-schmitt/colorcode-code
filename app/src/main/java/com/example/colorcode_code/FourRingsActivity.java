@@ -34,7 +34,7 @@ public class FourRingsActivity extends AppCompatActivity {
         tv_Tolerance = findViewById(R.id.tv_Tolerance_FourRings);
         values = ((Values) getApplicationContext());
         values.Init();
-
+        // setting up spinner with string-array
         ArrayAdapter<CharSequence> adapter_4_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_4_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_4_1.setAdapter(adapter_4_1);
@@ -75,7 +75,7 @@ public class FourRingsActivity extends AppCompatActivity {
         }
     }
 
-    public void onBack() {
+    public void onBack() { // getting back to main screen
         startActivity(new Intent(this, MainActivity.class));
     }
 
@@ -85,11 +85,13 @@ public class FourRingsActivity extends AppCompatActivity {
         tv_Resistance.setText(R.string.tvResistance);
         tv_Tolerance.setText(R.string.tvTolerance);
 
+        // getting color name from spinner
         String ring1_selected = spinner_4_1.getSelectedItem().toString();
         String ring2_selected = spinner_4_2.getSelectedItem().toString();
         String ring3_selected = spinner_4_3.getSelectedItem().toString();
         String ring4_selected = spinner_4_4.getSelectedItem().toString();
 
+        // using keys to get color values
         String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
         String tole = Objects.requireNonNull(values.dict_tole.get(ring4_selected)).toString();

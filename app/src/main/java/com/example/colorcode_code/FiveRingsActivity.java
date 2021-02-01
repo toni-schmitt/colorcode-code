@@ -38,6 +38,7 @@ public class FiveRingsActivity extends AppCompatActivity {
         spinner_5_4 = findViewById(R.id.spinner_5_4);
         spinner_5_5 = findViewById(R.id.spinner_5_5);
 
+        // setting up spinner with string-array
         ArrayAdapter<CharSequence> adapter_5_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_5_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_5_1.setAdapter(adapter_5_1);
@@ -80,7 +81,7 @@ public class FiveRingsActivity extends AppCompatActivity {
         }
     }
 
-    public void onBack() {
+    public void onBack() {  // getting back to main screen
         startActivity(new Intent(this, MainActivity.class));
     }
 //
@@ -89,12 +90,14 @@ public class FiveRingsActivity extends AppCompatActivity {
         tv_Resistance.setText(R.string.tvResistance);
         tv_Tolerance.setText(R.string.tvTolerance);
 
+        // getting color name from spinner
         String ring1_selected = spinner_5_1.getSelectedItem().toString();
         String ring2_selected = spinner_5_2.getSelectedItem().toString();
         String ring3_selected = spinner_5_3.getSelectedItem().toString();
         String ring4_selected = spinner_5_4.getSelectedItem().toString();
         String ring5_selected = spinner_5_5.getSelectedItem().toString();
 
+        // using keys to get color values
         String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring3_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring4_selected)).toString();
         String tole = Objects.requireNonNull(values.dict_tole.get(ring5_selected)).toString();
