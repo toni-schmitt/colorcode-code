@@ -60,7 +60,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
 
         String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
-
+        //erg.replaceAll("0","");
         tv_Resistance.setText(erg);
 
     }

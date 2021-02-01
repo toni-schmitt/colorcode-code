@@ -61,18 +61,18 @@ public class FourRingsActivity extends AppCompatActivity {
         String ring2_selected = spinner_4_2.getSelectedItem().toString();
         String ring3_selected = spinner_4_3.getSelectedItem().toString();
         String ring4_selected = spinner_4_4.getSelectedItem().toString();
-        String num;
 
-        if (values.dict_ring.get(ring1_selected) != 0){
-            num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
-        }
-        else{
-            num = Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
-        }
-//
-        int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(ring3_selected)).intValue();
+        String num = values.dict_ring.get(ring1_selected).toString() + values.dict_ring.get(ring2_selected).toString();
+        String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
+        String tole = Objects.requireNonNull(values.dict_tole.get(ring4_selected)).toString();
+
+        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
+
+        String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
+        String erg_tole = (Integer.parseInt(num) * (int)Double.parseDouble(tole)) + " ";
+        //erg.replaceAll("0","");
         tv_Resistance.setText(erg);
-        tv_Tolerance.setText((erg * values.dict_tole.get(ring4_selected)) + " +-");
+        tv_Tolerance.setText(erg_tole);
 
     }
 }

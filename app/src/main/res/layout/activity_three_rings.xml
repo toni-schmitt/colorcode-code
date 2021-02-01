@@ -49,9 +49,9 @@
 
     <Button
         android:id="@+id/btn_Continue_ThreeRings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginStart="135dp"
         android:layout_marginTop="250dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,9 +59,9 @@
 
     <TextView
         android:id="@+id/tv_Resistance_ThreeRings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
+        android:layout_width="@dimen/tv_width"
+        android:layout_height="@dimen/tv_height"
+        android:layout_marginStart="135dp"
         android:layout_marginBottom="350dp"
         android:text="@string/tvResistance"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,10 +69,10 @@
 
     <TextView
         android:id="@+id/tv_Tolerance_ThreeRings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="275dp"
+        android:layout_width="@dimen/tv_width"
+        android:layout_height="@dimen/tv_height"
+        android:layout_marginStart="135dp"
+        android:layout_marginBottom="280dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
