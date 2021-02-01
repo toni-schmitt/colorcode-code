@@ -9,48 +9,41 @@
 
     <Spinner
         android:id="@+id/spinner_3_2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="40dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="125dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="224dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_Tolerance_ThreeRings"
+        android:layout_marginEnd="70dp"
         app:layout_constraintEnd_toStartOf="@+id/spinner_3_3"
         app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_3_3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="86dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_3_2"
+        android:layout_width="40dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="70dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner_3_2"
-        app:layout_constraintTop_toTopOf="@+id/spinner_3_2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_Back_ThreeRings"
         android:layout_width="@dimen/btn_width"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="14dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/btn_back"
         app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_3_1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_3_1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="125dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="457dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Back_ThreeRings"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_3_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,32 +51,31 @@
         android:id="@+id/btn_Continue_ThreeRings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="250dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/tv_Resistance_ThreeRings"
-        app:layout_constraintStart_toEndOf="@+id/spinner_3_1"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_3_2" />
+        android:onClick="onClickThreeRings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_Resistance_ThreeRings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="336dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="350dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_Continue_ThreeRings"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Continue_ThreeRings" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_Tolerance_ThreeRings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="278dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="275dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_Resistance_ThreeRings"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_3_2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

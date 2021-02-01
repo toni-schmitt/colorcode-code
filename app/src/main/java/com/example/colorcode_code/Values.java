@@ -52,10 +52,6 @@ public class Values extends Application {
                 {
                     put(getResources().getStringArray(R.array.rings)[9], 9.0);
                 }
-
-                {
-                    put(getResources().getStringArray(R.array.rings)[10], 10.0);
-                }
             };
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,15 +88,11 @@ public class Values extends Application {
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[7], 100000000.0);
+                    put(getResources().getStringArray(R.array.multi)[7], 0.1);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[8], 0.1);
-                }
-
-                {
-                    put(getResources().getStringArray(R.array.multi)[9], 0.01);
+                    put(getResources().getStringArray(R.array.multi)[8], 0.01);
                 }
             };
         } catch (Exception e) {
