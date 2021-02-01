@@ -54,10 +54,13 @@ public class ThreeRingsActivity extends AppCompatActivity {
         String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());
         String ring3_selected = Objects.requireNonNull(spinner_3_3.getSelectedItem().toString());
 
-        String num = ring1_selected + ring2_selected;
+        String num = values.dict_ring.get(ring1_selected).toString() + values.dict_ring.get(ring2_selected).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
 
-        int erg = (int)Double.parseDouble(num) * (int)Double.parseDouble(multi);
+        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
+
+        String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
+
         tv_Resistance.setText(erg);
 
     }

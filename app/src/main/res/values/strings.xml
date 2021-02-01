@@ -9,6 +9,7 @@
 
     <string name="err_select_radiobutton">You need to select a Radio Button before you continue</string>
     <string name="err_smth_wrong">Something went wrong!</string>
+    <string name="tvResistance" />
 
 
     <string-array name="rings">

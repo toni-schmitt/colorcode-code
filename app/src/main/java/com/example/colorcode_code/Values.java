@@ -6,51 +6,51 @@ import java.util.Hashtable;
 
 public class Values extends Application {
 
-    Hashtable<String, Double> dict_ring;
+    Hashtable<String, Integer> dict_ring;
     Hashtable<String, Double> dict_multi;
     Hashtable<String, Double> dict_tole;
 
     public void Init() {
         try {
-            dict_ring = new Hashtable<String, Double>() {
+            dict_ring = new Hashtable<String, Integer>() {
                 {
-                    put(getResources().getStringArray(R.array.rings)[0], 0.0);
+                    put(getResources().getStringArray(R.array.rings)[0], 0);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[1], 1.0);
+                    put(getResources().getStringArray(R.array.rings)[1], 1);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[2], 2.0);
+                    put(getResources().getStringArray(R.array.rings)[2], 2);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[3], 3.0);
+                    put(getResources().getStringArray(R.array.rings)[3], 3);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[4], 4.0);
+                    put(getResources().getStringArray(R.array.rings)[4], 4);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[5], 5.0);
+                    put(getResources().getStringArray(R.array.rings)[5], 5);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[6], 6.0);
+                    put(getResources().getStringArray(R.array.rings)[6], 6);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[7], 7.0);
+                    put(getResources().getStringArray(R.array.rings)[7], 7);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[8], 8.0);
+                    put(getResources().getStringArray(R.array.rings)[8], 8);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.rings)[9], 9.0);
+                    put(getResources().getStringArray(R.array.rings)[9], 9);
                 }
             };
         } catch (Exception e) {
@@ -60,31 +60,31 @@ public class Values extends Application {
         try {
             dict_multi = new Hashtable<String, Double>() {
                 {
-                    put(getResources().getStringArray(R.array.multi)[0], 10.0);
+                    put(getResources().getStringArray(R.array.multi)[0], 10d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[1], 100.0);
+                    put(getResources().getStringArray(R.array.multi)[1], 100d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[2], 1000.0);
+                    put(getResources().getStringArray(R.array.multi)[2], 1000d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[3], 10000.0);
+                    put(getResources().getStringArray(R.array.multi)[3], 10000d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[4], 100000.0);
+                    put(getResources().getStringArray(R.array.multi)[4], 100000d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[5], 1000000.0);
+                    put(getResources().getStringArray(R.array.multi)[5], 1000000d);
                 }
 
                 {
-                    put(getResources().getStringArray(R.array.multi)[6], 10000000.0);
+                    put(getResources().getStringArray(R.array.multi)[6], 10000000d);
                 }
 
                 {
@@ -135,7 +135,7 @@ public class Values extends Application {
 
     }
 
-    public Hashtable<String, Double> getDict_Ring() {
+    public Hashtable<String, Integer> getDict_Ring() {
         return dict_ring;
     }
 
