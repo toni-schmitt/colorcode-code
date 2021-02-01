@@ -10,6 +10,7 @@
     <string name="err_select_radiobutton">Du musst einen Radio Button auswählen bevor du weiter machst</string>
     <string name="err_smth_wrong">Etwas lief schief!</string>
     <string name="tvResistance" />
+    <string name="tvTolerance" />
 
     <string-array name="rings">
         <item>Schwarz</item>
