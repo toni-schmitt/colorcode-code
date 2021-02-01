@@ -59,18 +59,20 @@
         android:id="@+id/btn_Continue_FourRings"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
-        android:layout_marginStart="135dp"
+        android:layout_marginStart="128dp"
         android:layout_marginTop="64dp"
         android:text="@string/btn_calc"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_4_3" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_4_3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_Resistance_FourRings"
         android:layout_width="@dimen/tv_width"
         android:layout_height="@dimen/tv_height"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginBottom="350dp"
         android:text="@string/tvResistance"
         app:layout_constraintBottom_toBottomOf="parent"
