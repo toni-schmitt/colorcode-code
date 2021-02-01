@@ -50,15 +50,16 @@ public class ThreeRingsActivity extends AppCompatActivity {
     }
 
     public void onClickThreeRings(View view) {
-        String ring1_selected = spinner_3_1.getSelectedItem().toString();
-        String ring2_selected = spinner_3_2.getSelectedItem().toString();
-        String ring3_selected = spinner_3_3.getSelectedItem().toString();
+        String ring1_selected = Objects.requireNonNull(spinner_3_1.getSelectedItem().toString());
+        String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());
+        String ring3_selected = Objects.requireNonNull(spinner_3_3.getSelectedItem().toString());
 
-        if (ring1_selected != null && ring2_selected != null && ring3_selected != null){
-            String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
-            int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(ring3_selected)).intValue();
-            tv_Resistance.setText(erg);
-        }
+        String num = ring1_selected + ring2_selected;
+        String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
+
+        int erg = (int)Double.parseDouble(num) * (int)Double.parseDouble(multi);
+        tv_Resistance.setText(erg);
+
     }
 }
 
