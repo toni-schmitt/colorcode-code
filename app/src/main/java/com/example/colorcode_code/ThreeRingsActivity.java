@@ -3,8 +3,12 @@ package com.example.colorcode_code;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,7 +35,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         spinner_3_2 = findViewById(R.id.spinner_3_2);
         spinner_3_3 = findViewById(R.id.spinner_3_3);
 
-        ArrayAdapter<CharSequence> adapter_3_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_3_1 = ArrayAdapter.createFromResource(this, R.array.all_rings, android.R.layout.simple_spinner_item);
         adapter_3_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_3_1.setAdapter(adapter_3_1);
         spinner_3_2.setAdapter(adapter_3_1);
@@ -43,13 +47,39 @@ public class ThreeRingsActivity extends AppCompatActivity {
         findViewById(R.id.btn_Back_ThreeRings).setOnClickListener(v -> onBack());
         findViewById(R.id.btn_Continue_ThreeRings).setOnClickListener(this::onClickThreeRings);
 
+        Spinner[] spinners = new Spinner[] {
+                spinner_3_1,
+                spinner_3_2,
+                spinner_3_3
+        };
+
+        for (Spinner sp : spinners){
+            sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    if (position != -1){
+                        values.setColor(sp, sp.getSelectedItem().toString());
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                }
+
+            });
+        }
+
+
     }
 
     public void onBack() {
         startActivity(new Intent(this, MainActivity.class));
     }
-//
+
     public void onClickThreeRings(View view) {
+
+        tv_Resistance.setText(R.string.tvResistance);
+
         String ring1_selected = Objects.requireNonNull(spinner_3_1.getSelectedItem().toString());
         String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());
         String ring3_selected = Objects.requireNonNull(spinner_3_3.getSelectedItem().toString());
@@ -57,11 +87,13 @@ public class ThreeRingsActivity extends AppCompatActivity {
         String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
 
-        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
+        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);s
 
-        String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
+        String erg = tv_Resistance.getText() + " " + values.formatNumber(Integer.parseInt(num) *  Double.parseDouble(multi)) + " ";
         //erg.replaceAll("0","");
         tv_Resistance.setText(erg);
     }
+
+
 }
 

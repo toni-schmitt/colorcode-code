@@ -12,6 +12,7 @@
         android:layout_height="@dimen/height"
         android:layout_marginStart="70dp"
         android:layout_marginTop="125dp"
+        android:backgroundTintMode="src_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,6 +22,7 @@
         android:layout_height="@dimen/height"
         android:layout_marginStart="35dp"
         android:layout_marginTop="125dp"
+        android:backgroundTintMode="src_in"
         app:layout_constraintStart_toEndOf="@+id/spinner_4_1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,6 +32,7 @@
         android:layout_height="@dimen/height"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="70dp"
+        android:backgroundTintMode="src_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,6 +55,7 @@
         android:layout_height="@dimen/height"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="35dp"
+        android:backgroundTintMode="src_in"
         app:layout_constraintEnd_toStartOf="@+id/spinner_4_4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,27 +72,33 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_Resistance_FourRings"
-        android:layout_width="@dimen/tv_width"
-        android:layout_height="@dimen/tv_height"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="350dp"
-        android:text="@string/tvResistance"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Continue_FourRings" />
-
-    <TextView
         android:id="@+id/tv_Tolerance_FourRings"
         android:layout_width="@dimen/tv_width"
         android:layout_height="@dimen/tv_height"
-        android:layout_marginStart="135dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="280dp"
         android:text="@string/tvTolerance"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Resistance_FourRings" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Resistance_FourRings"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <TextView
+        android:id="@+id/tv_Resistance_FourRings"
+        android:layout_width="@dimen/tv_width"
+        android:layout_height="@dimen/tv_height"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="350dp"
+        android:text="@string/tvResistance"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Continue_FourRings"
+        app:layout_constraintVertical_bias="0.456" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

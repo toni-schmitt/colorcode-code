@@ -10,8 +10,25 @@
 
     <string name="err_select_radiobutton">Du musst einen Radio Button auswählen bevor du weiter machst</string>
     <string name="err_smth_wrong">Etwas lief schief!</string>
-    <string name="tvResistance" />
-    <string name="tvTolerance" />
+    <string name="tvResistance">Widerstand:</string>
+    <string name="tvTolerance">Toleranz:</string>
+
+    <string name="plus_minus">+-</string>
+
+    <string-array name="all_rings">
+        <item>Schwarz</item>
+        <item>Braun</item>
+        <item>Rot</item>
+        <item>Orange</item>
+        <item>Gelb</item>
+        <item>Grün</item>
+        <item>Blau</item>
+        <item>Lila</item>
+        <item>Grau</item>
+        <item>Weiß</item>
+        <item>Gold</item>
+        <item>Silber</item>
+    </string-array>
 
     <string-array name="rings">
         <item>Schwarz</item>

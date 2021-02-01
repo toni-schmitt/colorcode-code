@@ -1,8 +1,11 @@
 package com.example.colorcode_code;
 
 import android.app.Application;
+import android.graphics.drawable.ColorDrawable;
+import android.widget.Spinner;
 
 import java.util.Hashtable;
+import java.util.Locale;
 
 public class Values extends Application {
     //
@@ -135,57 +138,38 @@ public class Values extends Application {
 
     }
 
-    public Hashtable<String, Integer> getDict_Ring() {
-        return dict_ring;
+    public void setColor(Spinner sp, String color) {
+
+        if (color.equals(getResources().getStringArray(R.array.all_rings)[0])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Black, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[1])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Brown, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[2])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Red, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[3])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Orange, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[4])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Yellow, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[5])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Green, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[6])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Blue, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[7])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Purple, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[8])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Grey, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[9])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.White, getTheme())));
+        } else if(color.equals(getResources().getStringArray(R.array.all_rings)[10])){
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Gold, getTheme())));
+        } else if (color.equals(getResources().getStringArray(R.array.all_rings)[11])) {
+            sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Silver, getTheme())));
+        }
     }
 
-    public Hashtable<String, Double> getDict_Multi() {
-        return dict_multi;
-    }
-
-    public Hashtable<String, Double> getDict_Tole() {
-        return dict_tole;
-    }
-
-    /*public void getDict_Ring(int index) {
-        //return dict_ring[index];
-    }
-
-    public Hashtable<String, Double> getDict_Multi(int index) {
-        return dict_multi;
-    }
-
-    public Hashtable<String, Double> getDict_Tole(int index) {
-        return dict_tole;
-    }
-
-    public Hashtable<String, Double> getDict_Ring(String key) {
-        return dict_ring;
-    }
-
-    public Hashtable<String, Double> getDict_Multi(String key) {
-        return dict_multi;
-    }
-
-    public Hashtable<String, Double> getDict_Tole(String key) {
-        return dict_tole;
-    }
-
-    public Hashtable<String, Double> getDict_Ring(Double value) {
-        return dict_ring;
-    }
-
-    public Hashtable<String, Double> getDict_Multi(Double value) {
-        return dict_multi;
-    }
-
-    public Hashtable<String, Double> getDict_Tole(Double value) {
-        return dict_tole;
-    }*/
-
-    public static String formatNumber(int count) {
+    public String formatNumber(Double count) {
         if (count < 1000) return "" + count;
         int exp = (int) (Math.log(count) / Math.log(1000));
-        return String.format("%.1f %c", count / Math.pow(1000, exp),"kMG".charAt(exp-1));
+        return String.format(Locale.getDefault(), "%.1f %c", count / Math.pow(1000, exp),"kMG".charAt(exp-1));
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -53,6 +54,30 @@ public class FiveRingsActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_BackFiveRings).setOnClickListener(v -> onBack());
         findViewById(R.id.btn_Continue_FiveRings).setOnClickListener(this::onClickFiveRings);
+
+        Spinner[] spinners = new Spinner[] {
+                spinner_5_1,
+                spinner_5_2,
+                spinner_5_3,
+                spinner_5_4,
+                spinner_5_5
+        };
+
+        for (Spinner sp : spinners){
+            sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    if (position != -1){
+                        values.setColor(sp, sp.getSelectedItem().toString());
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                }
+
+            });
+        }
     }
 
     public void onBack() {
@@ -60,23 +85,26 @@ public class FiveRingsActivity extends AppCompatActivity {
     }
 //
     public void onClickFiveRings(View view) {
+
+        tv_Resistance.setText(R.string.tvResistance);
+        tv_Tolerance.setText(R.string.tvTolerance);
+
         String ring1_selected = spinner_5_1.getSelectedItem().toString();
         String ring2_selected = spinner_5_2.getSelectedItem().toString();
         String ring3_selected = spinner_5_3.getSelectedItem().toString();
         String ring4_selected = spinner_5_4.getSelectedItem().toString();
         String ring5_selected = spinner_5_5.getSelectedItem().toString();
 
-        String num = values.dict_ring.get(ring1_selected).toString() + values.dict_ring.get(ring2_selected).toString() + values.dict_ring.get(ring3_selected).toString();
+        String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring3_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring4_selected)).toString();
         String tole = Objects.requireNonNull(values.dict_tole.get(ring5_selected)).toString();
 
-        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
 
-        String erg = (Integer.parseInt(num) * (int)Double.parseDouble(multi)) + " ";
-        String erg_tole = (Integer.parseInt(num) * Double.parseDouble(tole)) + " ";
-        //erg.replaceAll("0","");
+        String erg = tv_Resistance.getText() + " " + values.formatNumber(Integer.parseInt(num) * Double.parseDouble(multi)) + " ";
+        String erg_tole = tv_Tolerance.getText() + " " + (Integer.parseInt(num) * Double.parseDouble(tole)) + " " + getResources().getString(R.string.plus_minus);
+
         tv_Resistance.setText(erg);
-        tv_Tolerance.setText(erg_tole + " +-");
+        tv_Tolerance.setText(erg_tole);
 
 
     }

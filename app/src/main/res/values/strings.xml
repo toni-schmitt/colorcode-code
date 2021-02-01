@@ -10,9 +10,26 @@
 
     <string name="err_select_radiobutton">You need to select a Radio Button before you continue</string>
     <string name="err_smth_wrong">Something went wrong!</string>
-    <string name="tvResistance" />
-    <string name="tvTolerance" />
+    <string name="tvResistance">Resistance:</string>
+    <string name="tvTolerance">Tolerance:</string>
 
+    <string name="plus_minus">+-</string>
+
+
+    <string-array name="all_rings">
+        <item>Black</item>
+        <item>Brown</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Violet</item>
+        <item>Grey</item>
+        <item>White</item>
+        <item>Gold</item>
+        <item>Silver</item>
+    </string-array>
 
     <string-array name="rings">
         <item>Black</item>
