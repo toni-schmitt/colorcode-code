@@ -54,7 +54,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());
         String ring3_selected = Objects.requireNonNull(spinner_3_3.getSelectedItem().toString());
 
-        String num = values.dict_ring.get(ring1_selected).toString() + values.dict_ring.get(ring2_selected).toString();
+        String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
 
         //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);
