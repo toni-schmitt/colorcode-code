@@ -7,4 +7,10 @@
     <dimen name="btn_height">50dp</dimen>
     <dimen name="tv_width">290dp</dimen>
     <dimen name="tv_height">50dp</dimen>
+    <dimen name="const_btn_tv">64dp</dimen>
+    <dimen name="const_tv_tv">16dp</dimen>
+    <dimen name="const_sp_btn">64dp</dimen>
+    <dimen name="const_top_sp">125dp</dimen>
+    <dimen name="const_leftRight_sp">50dp</dimen>
+    <dimen name="const_sp_sp">25dp</dimen>
 </resources>
