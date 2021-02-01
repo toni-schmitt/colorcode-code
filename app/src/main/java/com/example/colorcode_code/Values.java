@@ -2,7 +2,10 @@ package com.example.colorcode_code;
 
 import android.app.Application;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.widget.Spinner;
+
+import androidx.annotation.RequiresApi;
 
 import java.util.Hashtable;
 import java.util.Locale;
@@ -138,6 +141,7 @@ public class Values extends Application {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void setColor(Spinner sp, String color) { // set spinner color based on selection
 
         if (color.equals(getResources().getStringArray(R.array.all_rings)[0])) {
