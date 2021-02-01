@@ -1,6 +1,7 @@
 package com.example.colorcode_code;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
@@ -66,6 +68,7 @@ public class FiveRingsActivity extends AppCompatActivity {
 
         for (Spinner sp : spinners){
             sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                     if (position != -1){
