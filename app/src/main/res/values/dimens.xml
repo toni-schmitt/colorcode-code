@@ -3,7 +3,7 @@
     <dimen name="width">40dp</dimen>
     <dimen name="height">85dp</dimen>
 
-    <dimen name="btn_width">125dp</dimen>
+    <dimen name="btn_width">150dp</dimen>
     <dimen name="btn_height">50dp</dimen>
     <dimen name="tv_width">125dp</dimen>
     <dimen name="tv_height">50dp</dimen>
