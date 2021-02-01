@@ -32,7 +32,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         spinner_3_2 = findViewById(R.id.spinner_3_2);
         spinner_3_3 = findViewById(R.id.spinner_3_3);
 
-        ArrayAdapter<CharSequence> adapter_3_1 = ArrayAdapter.createFromResource(this, R.array.all_rings, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_3_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_3_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_3_1.setAdapter(adapter_3_1);
         spinner_3_2.setAdapter(adapter_3_1);
