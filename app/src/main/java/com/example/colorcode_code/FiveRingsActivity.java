@@ -58,7 +58,7 @@ public class FiveRingsActivity extends AppCompatActivity {
     public void onBack() {
         startActivity(new Intent(this, MainActivity.class));
     }
-
+//
     public void onClickFiveRings(View view) {
         String spinner_1 = spinner_5_1.getSelectedItem().toString();
         String spinner_2 = spinner_5_2.getSelectedItem().toString();

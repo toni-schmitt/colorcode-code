@@ -48,7 +48,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
     public void onBack() {
         startActivity(new Intent(this, MainActivity.class));
     }
-
+//
     public void onClickThreeRings(View view) {
         String ring1_selected = Objects.requireNonNull(spinner_3_1.getSelectedItem().toString());
         String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());

@@ -69,7 +69,7 @@ public class FourRingsActivity extends AppCompatActivity {
         else{
             num = Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         }
-
+//
         int erg = Integer.parseInt(num) * Objects.requireNonNull(values.dict_multi.get(ring3_selected)).intValue();
         tv_Resistance.setText(erg);
         tv_Tolerance.setText((erg * values.dict_tole.get(ring4_selected)) + " +-");
