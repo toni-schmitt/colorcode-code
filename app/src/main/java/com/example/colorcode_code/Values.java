@@ -8,6 +8,7 @@ import java.util.Hashtable;
 import java.util.Locale;
 
 public class Values extends Application {
+    // dicts for spinner to get value
     Hashtable<String, Integer> dict_ring;
     Hashtable<String, Double> dict_multi;
     Hashtable<String, Double> dict_tole;
@@ -137,7 +138,7 @@ public class Values extends Application {
 
     }
 
-    public void setColor(Spinner sp, String color) {
+    public void setColor(Spinner sp, String color) { // set spinner color based on selection
 
         if (color.equals(getResources().getStringArray(R.array.all_rings)[0])) {
             sp.setBackground(new ColorDrawable(getResources().getColor(R.color.Black, getTheme())));
@@ -166,7 +167,7 @@ public class Values extends Application {
         }
     }
 
-    public String formatNumber(Double count) {
+    public String formatNumber(Double count) {  // cut 0 of erg and place k
         if (count < 1000) return "" + count;
         int exp = (int) (Math.log(count) / Math.log(1000));
         return String.format(Locale.getDefault(), "%.1f %c", count / Math.pow(1000, exp),"kMG".charAt(exp-1));

@@ -32,6 +32,7 @@ public class ThreeRingsActivity extends AppCompatActivity {
         spinner_3_2 = findViewById(R.id.spinner_3_2);
         spinner_3_3 = findViewById(R.id.spinner_3_3);
 
+        // setting up spinner with string-array
         ArrayAdapter<CharSequence> adapter_3_1 = ArrayAdapter.createFromResource(this, R.array.rings, android.R.layout.simple_spinner_item);
         adapter_3_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_3_1.setAdapter(adapter_3_1);
@@ -69,18 +70,18 @@ public class ThreeRingsActivity extends AppCompatActivity {
 
     }
 
-    public void onBack() {
+    public void onBack() { // getting back to main screen
         startActivity(new Intent(this, MainActivity.class));
     }
 
     public void onClickThreeRings(View view) {
 
         tv_Resistance.setText(R.string.tvResistance);
-
+        // getting color name from spinner
         String ring1_selected = Objects.requireNonNull(spinner_3_1.getSelectedItem().toString());
         String ring2_selected = Objects.requireNonNull(spinner_3_2.getSelectedItem().toString());
         String ring3_selected = Objects.requireNonNull(spinner_3_3.getSelectedItem().toString());
-
+        // using keys to get color values
         String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
 
