@@ -13,4 +13,7 @@
     <dimen name="const_top_sp">125dp</dimen>
     <dimen name="const_leftRight_sp">50dp</dimen>
     <dimen name="const_sp_sp">25dp</dimen>
+    <dimen name="rdigrp_margin">10dp</dimen>
+    <dimen name="rdg_width">372dp</dimen>
+    <dimen name="rdg_heigth">210dp</dimen>
 </resources>
