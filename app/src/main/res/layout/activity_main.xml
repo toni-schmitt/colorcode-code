@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RadioGroup
+
+<RadioGroup
         android:id="@+id/rg_RingGroup"
         android:layout_width="374dp"
         android:layout_height="179dp"

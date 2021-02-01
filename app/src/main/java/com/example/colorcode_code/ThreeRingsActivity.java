@@ -1,17 +1,14 @@
 package com.example.colorcode_code;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
@@ -87,10 +84,9 @@ public class ThreeRingsActivity extends AppCompatActivity {
         String num = Objects.requireNonNull(values.dict_ring.get(ring1_selected)).toString() + Objects.requireNonNull(values.dict_ring.get(ring2_selected)).toString();
         String multi = Objects.requireNonNull(values.dict_multi.get(ring3_selected)).toString();
 
-        //int erg_num = Integer.parseInt(num) * (int)Double.parseDouble(multi);s
 
         String erg = tv_Resistance.getText() + " " + values.formatNumber(Integer.parseInt(num) *  Double.parseDouble(multi)) + " ";
-        //erg.replaceAll("0","");
+
         tv_Resistance.setText(erg);
     }
 

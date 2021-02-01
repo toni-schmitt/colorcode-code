@@ -8,7 +8,6 @@ import java.util.Hashtable;
 import java.util.Locale;
 
 public class Values extends Application {
-    //
     Hashtable<String, Integer> dict_ring;
     Hashtable<String, Double> dict_multi;
     Hashtable<String, Double> dict_tole;
