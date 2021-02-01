@@ -2,25 +2,59 @@ package com.example.colorcode_code;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_Ring1, btn_Ring2, btn_Ring3, btn_Ring4, btn_Ring5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn_Ring1 = findViewById(R.id.ring_one);
-        btn_Ring2 = findViewById(R.id.ring_two);
-        btn_Ring3 = findViewById(R.id.ring_three);
-        btn_Ring4 = findViewById(R.id.ring_four);
-        btn_Ring5 = findViewById(R.id.ring_five);
+
+        findViewById(R.id.btn_Continue).setOnClickListener(v -> openActivity());
     }
 
-    public void calculateResistor() {
+    public void openActivity() {
+        RadioGroup rg_Rings = findViewById(R.id.rg_RingGroup);
+
+        if (rg_Rings.getCheckedRadioButtonId() == -1) {
+            Snackbar.make(findViewById(R.id.btn_Continue), R.string.err_select_radiobutton, Snackbar.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent intent;
+        switch (rg_Rings.getResources().getResourceEntryName(rg_Rings.getCheckedRadioButtonId())) {
+            case "rb_ThreeRings":
+                intent = new Intent(this, ThreeRingsActivity.class);
+                break;
+            case "rb_FourRings":
+                intent = new Intent(this, FourRingsActivity.class);
+                break;
+            case "rb_FiveRings":
+                intent = new Intent(this, FiveRingsActivity.class);
+                break;
+            default:
+                Snackbar.make(findViewById(R.id.btn_Continue), R.string.err_smth_wrong, Snackbar.LENGTH_LONG);
+                return;
+        }
+        startActivity(intent);
+
 
     }
+
 }

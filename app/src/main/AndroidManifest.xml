@@ -3,13 +3,22 @@
     package="com.example.colorcode_code">
 
     <application
+        android:name=".Values"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Colorcodecode">
-        <activity android:name=".MainActivity">
+
+        android:theme="@style/Theme.Colorcodecode"
+        tools:ignore="AllowBackup">
+        <activity android:name=".FiveRingsActivity" />
+        <activity android:name=".FourRingsActivity" />
+        <activity android:name=".ThreeRingsActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

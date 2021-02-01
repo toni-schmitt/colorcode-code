@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">colorcode-code</string>
+    <string name="rings_count">Anzahl der Ringe</string>
+    <string name="three_rings">Drei Ringe</string>
+    <string name="four_rings">Vier Ringe</string>
+    <string name="five_rings">Fünf Ringe</string>
+    <string name="btn_continue">Weiter</string>
+    <string name="btn_back">Zurück</string>
+
+    <string name="err_select_radiobutton">Du musst einen Radio Button auswählen bevor du weiter machst</string>
+    <string name="err_smth_wrong">Etwas lief schief!</string>
+    <string name="tvResistance" />
+
+    <string-array name="rings">
+        <item>Schwarz</item>
+        <item>Braun</item>
+        <item>Rot</item>
+        <item>Orange</item>
+        <item>Gelb</item>
+        <item>Grün</item>
+        <item>Blau</item>
+        <item>Lila</item>
+        <item>Grau</item>
+        <item>Weiß</item>
+    </string-array>
+
+    <string-array name="multi">
+        <item>Braun</item>
+        <item>Rot</item>
+        <item>Orange</item>
+        <item>Gelb</item>
+        <item>Grün</item>
+        <item>Blau</item>
+        <item>Lila</item>
+        <item>Gold</item>
+        <item>Silber</item>
+    </string-array>
+
+    //
+
+    <string-array name="tole">
+        <item>Braun</item>
+        <item>Rot</item>
+        <item>Grün</item>
+        <item>Blau</item>
+        <item>Lila</item>
+        <item>Gold</item>
+        <item>Silber</item>
+    </string-array>
+</resources>
